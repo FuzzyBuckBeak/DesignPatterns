@@ -1,4 +1,4 @@
-![alt text](https://github.com/FuzzyBuckBeak/DesignPatterns/blob/master/stratergyPattern/stratergyPattern/stratergyPattern/Contents/stratergyPattern.png?raw=true)
+![alt text](https://github.com/FuzzyBuckBeak/DesignPatterns/blob/master/MVC%20Pattern/MVC%20Pattern/Contents/MVC.png?raw=true)
 
 - #### Model:
 Models hold application data. They are usually structs or simple classes
