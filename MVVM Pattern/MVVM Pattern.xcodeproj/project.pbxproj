@@ -18,6 +18,7 @@
 		D98AE9C7223C5E1F002586FA /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AE9C6223C5E1F002586FA /* APIManager.swift */; };
 		D98AE9CA223C7391002586FA /* ShowCrewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AE9C9223C7391002586FA /* ShowCrewViewModel.swift */; };
 		D98AE9CC223C7A98002586FA /* ShowBuzz.json in Resources */ = {isa = PBXBuildFile; fileRef = D98AE9CB223C7A97002586FA /* ShowBuzz.json */; };
+		D98AE9CE223C8D9C002586FA /* Game-of-Thrones-Conquest-thumbnail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D98AE9CD223C8D9C002586FA /* Game-of-Thrones-Conquest-thumbnail.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		D98AE9C6223C5E1F002586FA /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		D98AE9C9223C7391002586FA /* ShowCrewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCrewViewModel.swift; sourceTree = "<group>"; };
 		D98AE9CB223C7A97002586FA /* ShowBuzz.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ShowBuzz.json; path = Contents/ShowBuzz.json; sourceTree = "<group>"; };
+		D98AE9CD223C8D9C002586FA /* Game-of-Thrones-Conquest-thumbnail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Game-of-Thrones-Conquest-thumbnail.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				D98AE9BA223C5929002586FA /* ViewController */,
 				D98AE9A8223C591C002586FA /* AppDelegate.swift */,
 				D98AE9CB223C7A97002586FA /* ShowBuzz.json */,
+				D98AE9CD223C8D9C002586FA /* Game-of-Thrones-Conquest-thumbnail.jpg */,
 				D98AE9AC223C591C002586FA /* Main.storyboard */,
 				D98AE9AF223C591D002586FA /* Assets.xcassets */,
 				D98AE9B1223C591D002586FA /* LaunchScreen.storyboard */,
@@ -181,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D98AE9B3223C591D002586FA /* LaunchScreen.storyboard in Resources */,
+				D98AE9CE223C8D9C002586FA /* Game-of-Thrones-Conquest-thumbnail.jpg in Resources */,
 				D98AE9CC223C7A98002586FA /* ShowBuzz.json in Resources */,
 				D98AE9B0223C591D002586FA /* Assets.xcassets in Resources */,
 				D98AE9AE223C591C002586FA /* Main.storyboard in Resources */,

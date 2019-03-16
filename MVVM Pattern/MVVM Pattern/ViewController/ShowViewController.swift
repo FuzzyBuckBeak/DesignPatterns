@@ -18,7 +18,9 @@ class ViewController: UIViewController {
             guard let show = show else { return }
             showDetail = ShowDetailsViewModel(show: show)
             showCrew = ShowCrewViewModel(show: show)
-            updateView()
+            DispatchQueue.main.async {
+                self.updateView()
+            }
         }
     }
     var showView: ShowView! {

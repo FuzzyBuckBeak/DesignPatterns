@@ -15,10 +15,9 @@ class ShowView: UIView {
     @IBOutlet weak var showPrice: UILabel!
     @IBOutlet weak var showRating: UILabel!
     @IBOutlet weak var showGenre: UILabel!
-    
-    @IBOutlet weak var showDirector: UILabel!
-    
+
     @IBOutlet weak var showProducers: UILabel!
     @IBOutlet weak var showArtists: UILabel!
     @IBOutlet weak var ShowCasrs: UILabel!
+    @IBOutlet weak var showDirector: UILabel!
 }

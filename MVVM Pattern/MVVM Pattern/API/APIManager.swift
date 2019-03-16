@@ -12,7 +12,7 @@ class APIManager {
 
     
     class func getShowDetails(completionHandler: @escaping (_: Show?, _:Error?) -> ()) {
-        let url = "https://raw.githubusercontent.com/cjbatin/Swift4-Decoding-JSON-Using-Codable/master/WeatherForecast/StubData/londonWeather.json"
+        let url = "https://raw.githubusercontent.com/FuzzyBuckBeak/DesignPatterns/master/MVVM%20Pattern/MVVM%20Pattern/Contents/ShowBuzz.json"
         getDataFromURL(urlString: url) { (data, error) in
             guard let data = data, error == nil else {
                 print("Failed to get data")
