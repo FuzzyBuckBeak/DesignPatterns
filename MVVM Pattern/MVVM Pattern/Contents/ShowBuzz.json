@@ -1,0 +1,31 @@
+{
+  "name": "Game of thrones",
+  "price" : "10.99",
+  "rating": 5,
+  "genre": "Drama",
+  "cast": [
+    "Peter Dinklage", 
+    "Lena Headey",
+    "Emilia Clarke",
+    "Kit Harington",
+    "Sophie Turner"
+  ],
+  "directors": [
+    "Pat harry",
+    "Elizath Gellar",
+    "Fiona Green",
+    "Jon Thomson"
+  ],
+  "producers": [
+   "Marry Angella",
+   "Monica Bing",
+   "Robert Rossel",
+   "Gen Andy"
+  ],
+  "makeArtists": [
+    "Lisely Bayer",
+    "Mike Hanson",
+    "Damien Urn",
+    "Matt katter"
+  ]
+}
