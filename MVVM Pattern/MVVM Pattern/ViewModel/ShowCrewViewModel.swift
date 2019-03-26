@@ -9,23 +9,27 @@
 import Foundation
 
 class ShowCrewViewModel {
-    var show: Show
+    var delegate: ViewController?
+    
+    var show: Show? {
+        didSet {
+            guard let show = show else { return }
+            updateViewModel(show: show)
+        }
+    }
     
     var cast: String = ""
     var directors: String = ""
     var producers: String = ""
     var makeArtists: String = ""
     
-    init(show: Show) {
-        self.show = show
-        updateViewModel()
-    }
     
-    func updateViewModel() {
+    func updateViewModel(show: Show) {
         cast = getStringFromArray(value: show.cast)
         directors = getStringFromArray(value: show.directors)
         producers = getStringFromArray(value: show.producers)
         makeArtists = getStringFromArray(value: show.makeArtists)
+        delegate?.updateView()
     }
     
     func getStringFromArray(value: [String]) -> String {

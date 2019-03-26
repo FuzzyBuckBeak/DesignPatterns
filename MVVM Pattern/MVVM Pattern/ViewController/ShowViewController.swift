@@ -10,19 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     private let apiManager = APIManager()
-    var showDetail: ShowDetailsViewModel?
-    var showCrew: ShowCrewViewModel?
-    
-    var show: Show? {
-        didSet {
-            guard let show = show else { return }
-            showDetail = ShowDetailsViewModel(show: show)
-            showCrew = ShowCrewViewModel(show: show)
-            DispatchQueue.main.async {
-                self.updateView()
-            }
-        }
-    }
+    var showDetail: ShowDetailsViewModel = ShowDetailsViewModel()
+    var showCrew: ShowCrewViewModel = ShowCrewViewModel()
+
     var showView: ShowView! {
         guard isViewLoaded else { return nil }
         return (view as! ShowView)
@@ -32,18 +22,22 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         fetchShowDetails()
+        showDetail.delegate = self
+        showCrew.delegate = self
     }
 
     func updateView() {
-        showView.showName.text = showDetail?.name
-        showView.showRating.text = showDetail?.rating
-        showView.showPrice.text = showDetail?.price
-        showView.showGenre.text = showDetail?.genre
-        
-        showView.showDirector.text = showCrew?.directors
-        showView.showArtists.text = showCrew?.makeArtists
-        showView.showProducers.text = showCrew?.producers
-        showView.ShowCasrs.text = showCrew?.cast
+        DispatchQueue.main.sync {
+            showView.showName.text = showDetail.name
+            showView.showRating.text = showDetail.rating
+            showView.showPrice.text = showDetail.price
+            showView.showGenre.text = showDetail.genre
+            
+            showView.showDirector.text = showCrew.directors
+            showView.showArtists.text = showCrew.makeArtists
+            showView.showProducers.text = showCrew.producers
+            showView.ShowCasrs.text = showCrew.cast
+        }
     }
     
     func fetchShowDetails() {
@@ -53,7 +47,8 @@ class ViewController: UIViewController {
                 return
             }
             guard let show = response else { return }
-            self.show = show
+            self.showDetail.updateViewModel(show: show)
+            self.showCrew.updateViewModel(show: show)
         }
     }
 }

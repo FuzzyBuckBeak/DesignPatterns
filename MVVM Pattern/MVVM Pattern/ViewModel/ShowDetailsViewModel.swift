@@ -9,29 +9,29 @@
 import Foundation
 
 class ShowDetailsViewModel {
-    var show: Show
+    var delegate: ViewController?
+    var show: Show? {
+        didSet {
+            guard let show = show else { return }
+            updateViewModel(show: show)
+        }
+    }
     
     var name: String = ""
     var price: String = ""
     var rating: String = ""
     var genre: String = ""
     
-    init(show: Show) {
-       self.show = show
-       updateViewModel()
-    }
-    
-    func updateViewModel() {
+    func updateViewModel(show: Show) {
         name = show.name
         price = convertToDollars(price: show.price)
         rating = convertRatingToStart(rating: show.rating)
         genre = show.genre
+        delegate?.updateView()
     }
     
     func convertRatingToStart(rating: Int) -> String {
         switch rating {
-            
-            
         case 1: return "★"
         case 2: return "★★"
         case 3: return "★★★"
