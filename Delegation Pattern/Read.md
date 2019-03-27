@@ -1,3 +1,5 @@
+# Delegation Pattern
+
 ![alt text](https://github.com/FuzzyBuckBeak/DesignPatterns/blob/master/Delegation%20Pattern/Delegation%20Pattern/Contents/Delegation.png?raw=true)
 
 - #### Object requiring delegation(glassView in our example):
