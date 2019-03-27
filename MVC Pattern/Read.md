@@ -1,4 +1,4 @@
-- # Model View Controller
+# Model View Controller
 
 ![alt text](https://github.com/FuzzyBuckBeak/DesignPatterns/blob/master/MVC%20Pattern/MVC%20Pattern/Contents/MVC.png?raw=true)
 
