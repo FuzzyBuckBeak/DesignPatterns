@@ -1,3 +1,5 @@
+# Stratergy Pattern
+
 ![alt text](https://github.com/FuzzyBuckBeak/DesignPatterns/blob/master/stratergyPattern/stratergyPattern/stratergyPattern/Contents/stratergyPattern.png?raw=true)
 
 - #### Object using strategy
