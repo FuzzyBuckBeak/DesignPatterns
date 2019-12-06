@@ -1,0 +1,58 @@
+//Clients should not be forced to depend upon interfaces that they do not use
+
+
+protocol GestureProtocol {
+    func didTap()
+    func didDoubleTap()
+    func didLongPress()
+}
+
+class SuperButton: GestureProtocol {
+    func didTap() {
+        // send tap action
+    }
+    func didDoubleTap() {
+        // send double tap action
+    }
+    func didLongPress() {
+        // send long press action
+    }
+}
+
+class PoorButton: GestureProtocol {
+    func didTap() {
+        // send tap action
+    }
+    func didDoubleTap() { }
+    func didLongPress() { }
+}
+
+//Poor button is forced to implement the methods that need not be implemented.
+//Instead separate the interfaces so that the class which needs to respect will use it without unneccesary implementation.
+
+protocol TapProtocol {
+    func didTap()
+}
+protocol DoubleTapProtocol {
+    func didDoubleTap()
+}
+protocol LongPressProtocol {
+    func didLongPress()
+}
+
+class SuperButton: TapProtocol, DoubleTapProtocol, LongPressProtocol {
+    func didTap() {
+        // send tap action
+    }
+    func didDoubleTap() {
+        // send double tap action
+    }
+    func didLongPress() {
+        // send long press action
+    }
+}
+class PoorButton: TapProtocol {
+    func didTap() {
+        // send tap action
+    }
+}
