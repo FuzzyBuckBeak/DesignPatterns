@@ -1,0 +1,50 @@
+import UIKit
+
+//SOLID PRINCIPLE - 2 - OPEN CLOSE PRINCIPLE
+protocol Printable {
+    func printDetails() -> String
+}
+
+//OPEN FOR EXTENSION, BUT CLOSED FOR MODIFICATION.
+class Logger {
+    static var logs: [Printable] = [ ]
+    static func printData() {
+        logs.forEach { log in
+            print(log.printDetails()) //STRATERGY PATTERN (printDetails() called on fly based on object type)
+        }
+    }
+}
+
+class Car: Printable {
+    let name: String
+    let color: String
+    init(name: String, color: String) {
+        self.name = name
+        self.color = color
+        Logger.logs.append(self)
+    }
+    func printDetails() -> String {
+        return "I'm \(name) and my color is \(color)"
+    }
+}
+
+class Bicycle: Printable {
+    let type: String
+    init(type: String) {
+        self.type = type
+        Logger.logs.append(self)
+    }
+    func printDetails() -> String {
+        return "I'm a \(type)"
+    }
+}
+
+let car1 = Car(name: "BMW", color: "white")
+let car2 = Car(name: "Mustang", color: "white")
+let car3 = Car(name: "Tesla", color: "white")
+let car4 = Car(name: "Honda", color: "white")
+
+let b1 = Bicycle(type: "TATA")
+let b2 = Bicycle(type: "NanoBot")
+
+Logger.printData()
