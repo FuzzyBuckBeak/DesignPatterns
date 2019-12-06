@@ -1,0 +1,62 @@
+//Functions that use pointers of references to base classes must be able to use objects of derived classes without knowing it
+
+//if we have a client that uses the base class, the client should be able to swap the base class with derived class without breaking any implementation.
+
+//lets say we have a base class
+
+class Handler {
+    func save(string: String) {
+        // Save string in the Cloud
+    }
+}
+
+//MyClient uses this base class
+
+class MyClient {
+  let variable: Handler?
+  
+  init(handler: Handler) {
+    self.handler = handler
+  }
+  
+  func save(string: String) {
+    handler.save(string)
+  }
+}
+
+//If i define a derived class: FilteredHandler derived from Handler
+
+class FilteredHandler: Handler {
+    override func save(string: String) {
+        guard string.characters.count > 5 else { return }
+        super.save(string: string)
+    }
+}
+
+//I should be able to swap Handler with FilteredHandler without breaking any implementation
+
+//MyClient uses this base class
+
+class MyClient {
+  let variable: FileHandler?
+  
+  init(fileHandler: FileHandler) {
+    self.variable = fileHandler
+  }
+  
+  func save(string: String) {
+    handler.save(string)
+  }
+}
+
+//But my FileHandler doesnt save the string if string.length < 5, clearing breaking the LSP Principle.
+
+//How do we rectify it? 
+//By defining the func in the base class that can handle the length restrcition with the default value.
+
+class Handler {
+    func save(string: String, minChars: Int = 0) {
+        guard string.characters.count >= minChars else { return }
+        // Save string in the Cloud
+    }
+}
